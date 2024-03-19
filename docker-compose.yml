@@ -22,3 +22,14 @@ services:
     network_mode: "bridge"
     environment:
       - SSH_ENABLE_ROOT=true
+  nginx-load-balancer:
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - "./nginx.conf:/etc/nginx/nginx.conf"
+    depends_on:
+      - managedhost-app-1
+      - managedhost-app-2
+      - managedhost-app-3
