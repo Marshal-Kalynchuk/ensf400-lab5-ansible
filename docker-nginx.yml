@@ -1,0 +1,8 @@
+  nginx-load-balancer:
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - "./nginx.c:/etc/nginx/nginx.conf"
+      - "./secrets/id_rsa_container.pub:/root/.ssh/authorized_keys"
