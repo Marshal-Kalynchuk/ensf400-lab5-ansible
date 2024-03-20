@@ -9,7 +9,7 @@ services:
       - SSH_ENABLE_ROOT=true
     ports:
       - "3000:3000"  # Map container port 3000 to host port 3000 (Web)
-      - "2223:22"    # Map host port 2223 to container port 22 (SSH)
+      - "2223:2223"    # Map host port 2223 to container port 22 (SSH)
     volumes:
       - "./secrets/id_rsa_container.pub:/root/.ssh/authorized_keys"
 
@@ -21,7 +21,7 @@ services:
       - SSH_ENABLE_ROOT=true
     ports:
       - "3001:3000"  # Map container port 3000 to host port 3001 (Web)
-      - "2224:22"    # Map host port 2224 to container port 22 (SSH)
+      - "2224:2224"    # Map host port 2224 to container port 22 (SSH)
     volumes:
       - "./secrets/id_rsa_container.pub:/root/.ssh/authorized_keys"
 
@@ -33,6 +33,6 @@ services:
       - SSH_ENABLE_ROOT=true
     ports:
       - "3002:3000"  # Map container port 3000 to host port 3002 (Web)
-      - "2225:22"    # Map host port 2225 to container port 22 (SSH)
+      - "2225:2225"    # Map host port 2225 to container port 22 (SSH)
     volumes:
       - "./secrets/id_rsa_container.pub:/root/.ssh/authorized_keys"
